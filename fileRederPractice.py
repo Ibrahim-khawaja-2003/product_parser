@@ -1,16 +1,17 @@
 import json
 import os
+import requests
 
-with open("./products.json", "r") as f:
-    results  = json.load(f)
+url = 'https://dummyjson.com/products'
+# requests.get
+# response.json
+r = requests.get(url)
+# print(r)
+results = r.json()
+# print(data)
 
-# def printProductTitles():
-                
-#         for i in range(len(results["products"])):
-#             print(results["products"][i]["title"])
-        
-#         os.system('pause')
-#         os.system('cls')
+# with open("./products.json", "r") as f:
+#     results  = json.load(f)
 
 def printProductInfo(infoTitle):
                 
@@ -82,7 +83,6 @@ def categoryWiseInfo():
     printCategoryProducts(choice)
 
 def main():
-    flagOne = False
 
     print("Welcome to Products details")
     while(True):
