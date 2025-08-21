@@ -1,27 +1,36 @@
 import json
+import os
 
-def printProductTitles():
-    with open("./products.json","r") as f:
-        results = json.load(f)
-        for i in range(len(results["products"])):
-            print(results["products"][i]["title"])
+with open("./products.json", "r") as f:
+    results  = json.load(f)
+
+# def printProductTitles():
+                
+#         for i in range(len(results["products"])):
+#             print(results["products"][i]["title"])
+        
+#         os.system('pause')
+#         os.system('cls')
 
 def printProductInfo(infoTitle):
-    with open("./products.json","r") as f:
-        results = json.load(f)
+                
         for i in range(len(results["products"])):
             print(results["products"][i][infoTitle])
 
+        os.system('pause')
+        os.system('cls')
+
 def printCategoryProducts(category):
-    with open("./products.json") as f:
-        results = json.load(f)
+        
         for i in range(len(results["products"])):
             if results["products"][i]["category"] == category:
                 print(results["products"][i]["title"])
+        
+        os.system('pause')
+        os.system('cls')
+
 
 def printSummary():
-    with open("./products.json","r") as f:
-        results = json.load(f)
 
     sumTotalPrice = 0
     sumTotalDiscount = 0
@@ -43,6 +52,9 @@ def printSummary():
         print(sumTotalDiscount)
         print(sumTotalDifference)
         print("--------------------------------")
+    
+    os.system('pause')
+    os.system('cls')
 
 def infoPrint():
     choice = input("""
@@ -73,7 +85,7 @@ def main():
     flagOne = False
 
     print("Welcome to Products details")
-    while(flagOne == False):
+    while(True):
         print("""Select Options:
             1- Specific Information of Products (Press 1)
             2- Summary Analysis (Press 2)
